@@ -1,0 +1,151 @@
+/*contient de base tout le menu, div primaire*/
+.menu-container{
+    margin-top: 18px;
+    margin-left: 1em;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+}
+
+.menu-trigger{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    background-color: #ffffff24;
+    margin-bottom: 1em;
+    top: 20px;
+    height: 3em;
+    width: 15em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#menu-text{
+    color: white;
+    font-size: 20px;
+    font-family: "Abel";
+}
+
+#navigation{
+    border-radius: 5px;
+    position: absolute;
+    width: 15em;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: #ffffff24;
+}
+
+#style{
+    font-family: "Abel";
+    box-shadow: inset 0 0 0 0 white;
+    padding: 10px 10px;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+    color: white;
+}
+
+li {
+    margin-bottom: 20px;
+}
+
+#style:hover{
+  color: #fff;
+  box-shadow: inset 160px 0 0 0 #ffffff36;
+}
+
+#style{
+    font-size: 16px;
+    line-height: 1.5;
+    text-decoration: none;
+}
+
+/* met de l'espace entre l'icône et le liens */
+#imgstyle{
+    padding-right: 10px;
+}
+
+#connect{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    gap: 20px;
+}
+
+form input::placeholder{
+    color: rgba(255, 255, 255, 0.481);
+    font-size: 15px;
+}
+
+#emailConnect{
+    padding: 1em;
+    border: none;
+    border-bottom: 2px solid rgb(225 225 225 / 52%);
+    background: none;
+    color: white;
+}
+
+#passwordConnect{
+    padding: 1em;
+    border: none;
+    border-bottom: 2px solid rgb(225 225 225 / 52%);
+    background: none;
+}
+
+#submitCo{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    backdrop-filter: blur(10px);
+    background-color: #ffffff24;
+    border: none;
+    border-radius: 5px;
+    font-family: "Abel";
+    box-shadow: inset 0 0 0 0 #ffffffad;
+    padding: 0 1rem;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+    width: 170px;
+    margin-top: -5px;
+    margin-bottom: 17px;
+}
+
+#submitCo:hover{
+  color: #fff;
+  box-shadow: inset 170px 0 0 0 #61108136;
+}
+
+
+/*Partie responsive du menu*/
+
+
+@media screen and (max-width: 900px) {
+    .menu-trigger{
+        width: 200px;
+    }
+
+    #navigation{
+        width: 200px;
+    }
+
+    #emailConnect{
+        padding: 5px;
+    }
+
+    #passwordConnect{
+        padding: 5px;
+    }
+    
+    #style{
+        font-size: 15px;
+    }
+
+    #style:hover{
+        box-shadow: inset 95px 0 0 0 #ffffff36;
+    }
+
+    #imgstyle{
+        display: none;
+    }
+}
