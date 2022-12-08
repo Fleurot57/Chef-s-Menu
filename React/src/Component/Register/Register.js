@@ -2,13 +2,13 @@
  * Import de la fonction useState de la librairie react
  */
 import { useState } from "react";
-import "./Inscription.css";
+import "./Register.css";
 
 /**
  * Creation du composant Register qui va permettre à l'utilisateur de s'inscrire sur le réseau social
  * @returns Un formulaire d'inscription
  */
-function Inscription(){
+function Register(){
     
     //Création des variables d'état à vide qui regroupent tous les inputs du formulaire, ainsi que la fonction de mise à jour des variables d'état 
     const [firstName, setFirstName] = useState("");
@@ -127,4 +127,4 @@ function Inscription(){
     )
 }
 
-export default Inscription;
+export default Register;

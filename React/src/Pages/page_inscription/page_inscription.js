@@ -1,5 +1,5 @@
 import Menu from "../../Component/Menu/Menu";
-import "./Inscription.css";
+import "./page_inscription.css";
 import Register from "../../Component/Register/Register";
 
 
