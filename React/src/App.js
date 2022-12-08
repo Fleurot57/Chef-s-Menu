@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Error404 from "./Component/Error404/Error404";
 
 import Accueil from "./Pages/Accueil/Accueil";
-import Inscription from "./Pages/Inscription/Inscription";
+import Inscription from "./Pages/page_inscription/page_inscription";
 
 import "./App.css";
 
