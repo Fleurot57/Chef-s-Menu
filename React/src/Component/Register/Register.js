@@ -1,6 +1,3 @@
-/**
- * Import de la fonction useState de la librairie react
- */
 import { useState } from "react";
 import "./Register.css";
 
@@ -42,7 +39,7 @@ function Register(){
      */
     function handleSubmit(e){
         e.preventDefault();
-        console.log(firstName, lastName, email, password);
+        console.log(lastName, firstName, email, password);
         addUser();//Au click sur le bouton submit appel de la fonction addUser
     }
 
@@ -57,24 +54,16 @@ function Register(){
             },
     
             body: JSON.stringify({
-                firstname: firstName,
                 lastname: lastName,
+                firstname: firstName,
                 email: email,
                 password: password,
             }),
         }
     
-        const response = await fetch(`https://social-network-api.osc-fr1.scalingo.io/clash-book/register`, options);
+        const response = await fetch(`http://127.0.0.1:8000/api/register`, options);
     
         const data = await response.json();
-        const message = data.message;
-
-        if ( message === 'Firstname, lastname, email and password are required.') {
-            alert("Champs manquant");
-        }
-        if ( message != 'Firstname, lastname, email and password are required.') {
-            alert("Un nouveau clasheur a integré l'équipe");
-        }
 
         console.log("creation de compte : ", data);
     }
@@ -84,19 +73,19 @@ function Register(){
             <form onSubmit={handleSubmit}>
                 <input 
                     type="text" 
-                    id="firstName" 
-                    onChange={handleChange} 
-                    value={firstName}
-                    placeholder="Prénom"
-                    required
-                />
-                
-                <input 
-                    type="text" 
                     id="lastName" 
                     onChange={handleChange} 
                     value={lastName}
                     placeholder="Nom"
+                    required
+                />
+
+                <input 
+                    type="text" 
+                    id="firstName" 
+                    onChange={handleChange} 
+                    value={firstName}
+                    placeholder="Prénom"
                     required
                 />
                 

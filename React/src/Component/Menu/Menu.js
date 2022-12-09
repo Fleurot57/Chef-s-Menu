@@ -59,7 +59,7 @@ function Menu() {
         const success = data.success;
 
         if ( success === false ) {
-            alert("Veuillez remplir les champs de connection ci dessous");
+            alert("Veuillez remplir les champs de connection ci-dessous");
         }
         if ( success === true ) {
             alert("vous êtes connecté");
@@ -106,11 +106,11 @@ function Menu() {
                 open && <nav id="navigation">
                 <ul>
                     <li>
-                        <Link to="/" id="style"><img src="/Img/maison.png" alt="icone" id="imgstyle" />ACCUEIL</Link>
+                        <Link to="/" id="style">ACCUEIL</Link>
                     </li>
 
                     <li>
-                        <Link to="/Inscription" id="style"><img src="/Img/maison.png" alt="icone" id="imgstyle" />INSCRIPTION</Link>
+                        <Link to="/Inscription" id="style">INSCRIPTION</Link>
                     </li>
                 </ul>
 
