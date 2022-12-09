@@ -1,3 +1,79 @@
+#register form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3em;
+    border-radius: 10px;
+    background-color: #ffffff24;
+    width: 34em;
+}
+  
+#register form input {
+    margin: 5%;
+    padding: 1em;
+    border: none;
+    border-bottom: 2px solid rgb(225 225 225 / 52%);
+    background: none;
+    font-size: 20px;
+    color: white;
+    width: 400px;
+}
+  
+#register form input::placeholder{
+    color: rgb(169, 167, 167);
+    font-size: 1.5rem;
+}
+  
+#submitUser {
+    font-family: 'Abel';
+    text-transform: uppercase;
+    color: #efefef;
+    font-size: 20px;
+    letter-spacing: 3px;
+    margin-top: 3em;
+    font-size: 1em;
+    background: #16172466;
+    padding: 1.5rem 5rem;
+    border-radius: 1.3rem;
+    border: none;
+    position: relative; 
+    cursor: pointer;
+}
+  
+#submitClasher:before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #00f7f6;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    border-radius: 1.3rem;
+}
+
+/*partie responsive*/
+  
+@media screen and (max-width: 900px) {
+    #register form {
+        width: 13em;
+    }
+  
+    #register form {
+      width: 14em;
+    }
+  
+    #register form input {
+      width: 11em;
+      font-size: 1.3rem;
+    }
+  
+    #register form input::placeholder{
+      font-size: 1rem;
+    }
+}
+
 .Inscription {
     background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
 }

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import "./Profil.css";
+import "./page_profil.css";
+import Menu from "../../Component/Menu/Menu";
 
 function Profil() {
     //Création d'une variable contenant un objet avec les données de l'utilistateur
@@ -20,7 +21,7 @@ function Profil() {
             }
         }
 
-        const responseInfo = await fetch("https://social-network-api.osc-fr1.scalingo.io/clash-book/user", optionsInfo);
+        const responseInfo = await fetch("http://127.0.0.1:8000/api/register", optionsInfo);
 
         const dataInfo = await responseInfo.json();
 
@@ -30,7 +31,7 @@ function Profil() {
         const email = dataInfo.email;
 
         //Mise à jour de la variable user avec sa fonction setUser, les propriétés prennent la valeur des données
-        setUser({firstname: firstname, lastname: lastname, email: email})
+        setUser({lastname: lastname, firstname: firstname, email: email})
     }
 
     useEffect(()=>{getInfo()},[])
@@ -61,7 +62,7 @@ function Profil() {
         const newMember = data.success;
 
         if ( newMember === true ) {
-            alert("Clasheur modifié");
+            alert("Profil modifié");
         }
     }
 
@@ -69,19 +70,19 @@ function Profil() {
      * Création d'une fonction qui va permettre d'écouter un event. On pourra changer la valeur des inputs
      * @param {*} e 
      */
+     function lastNameChange(e){
+        e.preventDefault();
+        setUser({//MAJ de la variable user
+            ...user,//permet de décomposer l'objet pour modifier la propriété lastname
+            lastname: e.target.value
+        });
+    }
+
     function firstnameChange(e){
         e.preventDefault();
         setUser({//MAJ de la variable user
             ...user,//permet de décomposer l'objet pour modifier la propriété firstname 
             firstname: e.target.value
-        });
-    }
-
-    function lastNameChange(e){
-        e.preventDefault();
-        setUser({//MAJ de la variable user
-            ...user,//permet de décomposer l'objet pour modifier la propriété lastname
-            lastname: e.target.value
         });
     }
 
@@ -102,32 +103,37 @@ function Profil() {
     }
 
     return (
-        <div>
+        <div className="page_profil">
+            <Menu />
+            <div id="page_profil">
 
-        <div className="info">
-            <label id="inputProfilText" htmlFor="firstname">Prénom :</label>
-            <input id="inputProfilStyle"
-                name="firstname" 
-                value={user.firstname}
-                onChange={firstnameChange}
-            />
+                <span id="profilTitle">PROFIL</span>
 
-            <label id="inputProfilText" htmlFor="lastname">Nom :</label>
-            <input id="inputProfilStyle"
-                name="lastname" 
-                value={user.lastname}
-                onChange={lastNameChange}
-            />
+                <div className="info">
+                    <label id="inputProfilText" htmlFor="lastname">Nom :</label>
+                    <input id="inputProfilStyle"
+                        name="lastname" 
+                        value={user.lastname}
+                        onChange={lastNameChange}
+                    />
 
-            <label id="inputProfilText" htmlFor="email">Email :</label>
-            <input id="inputProfilStyle"
-                name="email" 
-                value={user.email}
-                onChange={emailChange}
-            />
+                    <label id="inputProfilText" htmlFor="firstname">Prénom :</label>
+                    <input id="inputProfilStyle"
+                        name="firstname" 
+                        value={user.firstname}
+                        onChange={firstnameChange}
+                    />
 
-        </div>
-            <button id="buttonProfil" onClick={submitInfo}>Modifier</button>
+                    <label id="inputProfilText" htmlFor="email">Email :</label>
+                    <input id="inputProfilStyle"
+                        name="email" 
+                        value={user.email}
+                        onChange={emailChange}
+                    />
+                </div>
+
+                <button id="buttonProfil" onClick={submitInfo}>Modifier</button>
+            </div>
         </div>
     )
 }

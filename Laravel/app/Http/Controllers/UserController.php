@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     //
-    function register(Request $request) {
+    function inscription(Request $request) {
         $user = new User;
         $user->lastname = $request->input('lastname');
         $user->firstname = $request->input('firstname');

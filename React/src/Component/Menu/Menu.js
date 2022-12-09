@@ -112,6 +112,10 @@ function Menu() {
                     <li>
                         <Link to="/Inscription" id="style">INSCRIPTION</Link>
                     </li>
+
+                    <li>
+                        <Link to="/Profil" id="style">PROFIL</Link>
+                    </li>
                 </ul>
 
                 <form id="connect" onSubmit={submit}>
