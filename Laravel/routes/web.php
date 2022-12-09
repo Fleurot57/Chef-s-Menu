@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/inscription', [\App\Http\Controllers\chefController::class, 'inscription'])->name('inscription.index');
