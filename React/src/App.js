@@ -1,10 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Error404 from "./Component/Error404/Error404";
+import Client from "./Component/Client/Client";
 
 import Accueil from "./Pages/Accueil/Accueil";
 import Inscription from "./Pages/page_inscription/page_inscription";
 import Profil from "./Pages/page_profil/page_profil";
-
 import "./App.css";
 
 const router = createBrowserRouter([
@@ -25,6 +25,7 @@ const router = createBrowserRouter([
     element: <Profil />,
     error: <Error404 />
   }
+
 ]);
 
 function App() {
