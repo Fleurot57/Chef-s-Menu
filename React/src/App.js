@@ -31,6 +31,7 @@ const router = createBrowserRouter([
     element: <QRgenerator />,
     error: <Error404 />
   }
+
 ]);
 
 function App() {
